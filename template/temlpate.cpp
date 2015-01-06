@@ -48,6 +48,26 @@ bool isPrime(int n){
 			return false;
 	return true;
 }
+//最大公約数
+int gcd ( int a, int b )
+{
+  int c;
+  while ( a != 0 ) {
+		c = a; a = b%a;  b = c;
+  }
+  return b;
+}
+int gcdr ( int a, int b )
+{
+  if ( a==0 ) return b;
+  return gcdr ( b%a, a );
+}
+//最小公倍数
+int lcm (int a, int b)
+{
+	return (a*b)/gcd(a,b);
+}
+
 /*---------------------------------------------*/
 
 int main(int argc, const char * argv[])
